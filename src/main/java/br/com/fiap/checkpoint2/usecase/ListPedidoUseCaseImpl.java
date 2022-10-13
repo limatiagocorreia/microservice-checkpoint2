@@ -23,7 +23,7 @@ public class ListPedidoUseCaseImpl implements ListPedidoUseCase{
         List<Pedido> pedidos = pedidoRepository.findAll();
         return pedidos
                 .stream()
-                .map(product -> pedidoMapper.toPedidoOutpuDTO(product))
+                .map(product -> pedidoMapper.toOutputDTO(product))
                 .collect(Collectors.toList());
     }
 }

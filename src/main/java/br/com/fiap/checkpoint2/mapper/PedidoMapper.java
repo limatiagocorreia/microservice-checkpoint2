@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PedidoMapper {
+
     public Pedido toPedido(PedidoInputDTO dto) {
         return new PedidoBuilder()
                 .dataPedido(dto.getDataPedido())
@@ -16,7 +17,8 @@ public class PedidoMapper {
                 .valorTotal(dto.getValorTotal())
                 .build();
     }
-    public PedidoOutputDTO toPedidoOutpuDTO(Pedido pedido) {
+
+    public PedidoOutputDTO toOutputDTO(Pedido pedido) {
         return new PedidoOutputDTO(pedido);
     }
 

@@ -23,7 +23,7 @@ public class GetPedidoByIdUseCaseImpl implements GetPedidoByIdUseCase {
         Optional<Pedido> pedido = pedidoRepository.findById(id);
         if (pedido.isEmpty()) return null;
 
-        PedidoOutputDTO pedidoOutputDTO = pedidoMapper.toPedidoOutpuDTO(pedido.get());
+        PedidoOutputDTO pedidoOutputDTO = pedidoMapper.toOutputDTO(pedido.get());
         return pedidoOutputDTO;
     }
 }

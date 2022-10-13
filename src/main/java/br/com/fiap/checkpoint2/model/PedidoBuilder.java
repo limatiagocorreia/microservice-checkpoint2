@@ -36,15 +36,24 @@ public class PedidoBuilder {
     }
 
     public Pedido build() {
-        if (dataPedido == null || codigoCliente == null || dataCadastro == null || valorTotal == null) {
-            throw new IllegalArgumentException("Dados do pedido incompletos");
+        if (dataPedido == null) {
+            throw new IllegalArgumentException("Data do pedido não informada");
         }
-        Pedido pedido = new Pedido(id,
+        if (codigoCliente == null) {
+            throw new IllegalArgumentException("Codigo do cliente não informada");
+        }
+        if (dataCadastro == null) {
+            throw new IllegalArgumentException("Data de cadastro não informada");
+        }
+        if (valorTotal == null) {
+            throw new IllegalArgumentException("Valor total não informada");
+        }
+
+        return new Pedido(id,
                 dataPedido,
                 codigoCliente,
                 dataCadastro,
                 valorTotal);
-        return pedido;
     }
 
 }
